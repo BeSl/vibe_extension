@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="#0078d4" stroke="#005a9e" stroke-width="2"/>
+  
+  <!-- 1C Text -->
+  <text x="32" y="45" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">1C</text>
+  
+  <!-- Tree/folder icon -->
+  <g transform="translate(20, 55)">
+    <!-- Main folder -->
+    <rect x="0" y="0" width="32" height="24" rx="2" fill="white" opacity="0.9"/>
+    <rect x="0" y="4" width="8" height="4" rx="1" fill="white"/>
+    
+    <!-- Sub folders -->
+    <rect x="8" y="8" width="20" height="16" rx="1" fill="white" opacity="0.7"/>
+    <rect x="12" y="12" width="16" height="12" rx="1" fill="white" opacity="0.5"/>
+    
+    <!-- Connection lines -->
+    <line x1="4" y1="24" x2="4" y2="32" stroke="white" stroke-width="1" opacity="0.8"/>
+    <line x1="4" y1="32" x2="20" y2="32" stroke="white" stroke-width="1" opacity="0.8"/>
+    <line x1="20" y1="32" x2="20" y2="36" stroke="white" stroke-width="1" opacity="0.8"/>
+    
+    <!-- Document icons -->
+    <rect x="36" y="8" width="12" height="16" rx="1" fill="#ffd700" opacity="0.9"/>
+    <rect x="52" y="12" width="12" height="16" rx="1" fill="#ffd700" opacity="0.9"/>
+    
+    <!-- Lines in documents -->
+    <line x1="38" y1="12" x2="46" y2="12" stroke="#0078d4" stroke-width="0.5"/>
+    <line x1="38" y1="15" x2="46" y2="15" stroke="#0078d4" stroke-width="0.5"/>
+    <line x1="38" y1="18" x2="44" y2="18" stroke="#0078d4" stroke-width="0.5"/>
+    
+    <line x1="54" y1="16" x2="62" y2="16" stroke="#0078d4" stroke-width="0.5"/>
+    <line x1="54" y1="19" x2="62" y2="19" stroke="#0078d4" stroke-width="0.5"/>
+    <line x1="54" y1="22" x2="60" y2="22" stroke="#0078d4" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Small gear icon for configuration -->
+  <g transform="translate(90, 20)">
+    <circle cx="8" cy="8" r="6" fill="none" stroke="white" stroke-width="1"/>
+    <circle cx="8" cy="8" r="3" fill="white"/>
+    <rect x="7" y="2" width="2" height="3" fill="white"/>
+    <rect x="7" y="13" width="2" height="3" fill="white"/>
+    <rect x="2" y="7" width="3" height="2" fill="white"/>
+    <rect x="13" y="7" width="3" height="2" fill="white"/>
+  </g>
+  
+  <!-- Small XML tag -->
+  <text x="75" y="108" font-family="monospace" font-size="10" fill="white" opacity="0.8">&lt;/&gt;</text>
+</svg>

@@ -1,0 +1,328 @@
+/* VSCode Webview Styles for 1C Object Details */
+:root {
+    --container-max-width: 1200px;
+    --border-radius: 6px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--vscode-font-family);
+    font-size: var(--vscode-font-size);
+    color: var(--vscode-foreground);
+    background-color: var(--vscode-editor-background);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+/* Header Styles */
+.object-header {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--vscode-panel-border);
+}
+
+.object-title {
+    margin: 0 0 var(--spacing-sm) 0;
+    font-size: 2em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.object-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--border-radius);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+}
+
+/* Object type icons */
+.icon-catalog { background-color: #4CAF50; }
+.icon-catalog::before { content: "📚"; }
+
+.icon-document { background-color: #2196F3; }
+.icon-document::before { content: "📄"; }
+
+.icon-report { background-color: #FF9800; }
+.icon-report::before { content: "📊"; }
+
+.icon-dataprocessor { background-color: #9C27B0; }
+.icon-dataprocessor::before { content: "⚙️"; }
+
+.icon-accumulation-register { background-color: #F44336; }
+.icon-accumulation-register::before { content: "📈"; }
+
+.icon-information-register { background-color: #00BCD4; }
+.icon-information-register::before { content: "🗃️"; }
+
+.icon-common-module { background-color: #795548; }
+.icon-common-module::before { content: "🧩"; }
+
+.icon-common-form { background-color: #607D8B; }
+.icon-common-form::before { content = "🖼️"; }
+
+.icon-constant { background-color: #3F51B5; }
+.icon-constant::before { content: "🔒"; }
+
+.icon-enum { background-color: #E91E63; }
+.icon-enum::before { content: "📋"; }
+
+.icon-default { background-color: #757575; }
+.icon-default::before { content: "📦"; }
+
+.object-meta {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    margin-top: var(--spacing-sm);
+}
+
+.object-type {
+    background-color: var(--vscode-badge-background);
+    color: var(--vscode-badge-foreground);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    font-size: 0.875em;
+    font-weight: 500;
+}
+
+.object-name {
+    color: var(--vscode-descriptionForeground);
+    font-style: italic;
+}
+
+/* Section Styles */
+.info-section {
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background-color: var(--vscode-editor-inactiveSelectionBackground);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--vscode-panel-border);
+}
+
+.info-section h2 {
+    margin: 0 0 var(--spacing-lg) 0;
+    font-size: 1.25em;
+    font-weight: 600;
+    color: var(--vscode-titleBar-activeForeground);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.collapsible h2 {
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s ease;
+}
+
+.collapsible h2:hover {
+    color: var(--vscode-textLink-foreground);
+}
+
+.toggle-icon {
+    font-size: 0.8em;
+    transition: transform 0.2s ease;
+}
+
+.collapsed .toggle-icon {
+    transform: rotate(-90deg);
+}
+
+.collapsed .raw-data {
+    display: none;
+}
+
+/* Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.info-item label {
+    font-weight: 600;
+    color: var(--vscode-input-foreground);
+    font-size: 0.9em;
+}
+
+.info-item span {
+    color: var(--vscode-foreground);
+    word-break: break-all;
+}
+
+.uuid {
+    font-family: var(--vscode-editor-font-family);
+    font-size: 0.875em;
+    background-color: var(--vscode-textCodeBlock-background);
+    padding: var(--spacing-xs);
+    border-radius: var(--border-radius);
+}
+
+.file-path {
+    font-family: var(--vscode-editor-font-family);
+    font-size: 0.875em;
+    background-color: var(--vscode-textCodeBlock-background);
+    padding: var(--spacing-xs);
+    border-radius: var(--border-radius);
+}
+
+/* Lists */
+.attributes-list,
+.forms-list,
+.commands-list {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.attribute-item,
+.form-item,
+.command-item {
+    padding: var(--spacing-md);
+    background-color: var(--vscode-input-background);
+    border: 1px solid var(--vscode-input-border);
+    border-radius: var(--border-radius);
+    transition: background-color 0.2s ease;
+}
+
+.attribute-item:hover,
+.form-item:hover,
+.command-item:hover {
+    background-color: var(--vscode-list-hoverBackground);
+}
+
+.attribute-item h3 {
+    margin: 0 0 var(--spacing-xs) 0;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.attribute-details {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    font-size: 0.875em;
+}
+
+.attribute-type,
+.form-name,
+.command-name {
+    font-weight: 500;
+    color: var(--vscode-symbolIcon-classForeground);
+}
+
+.attribute-synonym,
+.form-synonym,
+.command-synonym {
+    color: var(--vscode-descriptionForeground);
+    font-style: italic;
+}
+
+/* Raw Data */
+.raw-data {
+    margin-top: var(--spacing-md);
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.raw-data pre {
+    background-color: var(--vscode-textCodeBlock-background);
+    border: 1px solid var(--vscode-panel-border);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    margin: 0;
+    overflow-x: auto;
+    font-family: var(--vscode-editor-font-family);
+    font-size: 0.875em;
+    line-height: 1.4;
+}
+
+.raw-data code {
+    color: var(--vscode-textPreformat-foreground);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--vscode-scrollbarSlider-background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--vscode-scrollbarSlider-hoverBackground);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--vscode-scrollbarSlider-activeBackground);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: var(--spacing-md);
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .object-title {
+        font-size: 1.5em;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+    
+    .object-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+}
+
+/* Animation */
+.info-section {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

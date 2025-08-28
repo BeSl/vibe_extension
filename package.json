@@ -1,0 +1,172 @@
+{
+  "name": "1c-config-viewer",
+  "displayName": "1C Configuration Viewer",
+  "description": "Visual representation of 1C Enterprise configuration objects",
+  "version": "1.5.0",
+  "publisher": "raschiren",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raschiren/1c-config-viewer.git"
+  },
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "1c",
+    "configuration",
+    "enterprise",
+    "xml",
+    "visualization"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onView:1cConfigTreeView",
+    "onCommand:1cConfigViewer.showConfigTree",
+    "onCommand:1cConfigViewer.refreshTree",
+    "onCommand:1cConfigViewer.openObjectDetails",
+    "onCommand:1cConfigViewer.searchObjects",
+    "onCommand:1cConfigViewer.clearSearch",
+    "onCommand:1cConfigViewer.scanConfigurations",
+    "onCommand:1cConfigViewer.showHelp"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "1cConfigViewer",
+          "title": "1C Configuration",
+          "icon": "$(list-tree)"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "1cConfigViewer.showConfigTree",
+        "title": "Show 1C Configuration Tree",
+        "icon": "$(list-tree)"
+      },
+      {
+        "command": "1cConfigViewer.refreshTree",
+        "title": "Refresh",
+        "icon": "$(sync)"
+      },
+      {
+        "command": "1cConfigViewer.openObjectDetails",
+        "title": "Open Object Details",
+        "icon": "$(eye)"
+      },
+      {
+        "command": "1cConfigViewer.searchObjects",
+        "title": "Search Objects",
+        "icon": "$(search)"
+      },
+      {
+        "command": "1cConfigViewer.clearSearch",
+        "title": "Clear Search",
+        "icon": "$(clear-all)"
+      },
+      {
+        "command": "1cConfigViewer.scanConfigurations",
+        "title": "Scan for 1C Configurations",
+        "icon": "$(database)"
+      },
+      {
+        "command": "1cConfigViewer.showHelp",
+        "title": "Show Help",
+        "icon": "$(question)"
+      }
+    ],
+    "views": {
+      "1cConfigViewer": [
+        {
+          "id": "1cConfigTreeView",
+          "name": "Configuration Tree",
+          "when": "true"
+        }
+      ]
+    },
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "1cConfigViewer.showConfigTree",
+          "title": "1C: Show Configuration Tree"
+        },
+        {
+          "command": "1cConfigViewer.searchObjects",
+          "title": "1C: Search Objects"
+        },
+        {
+          "command": "1cConfigViewer.clearSearch",
+          "title": "1C: Clear Search"
+        },
+        {
+          "command": "1cConfigViewer.scanConfigurations",
+          "title": "1C: Scan for Configurations"
+        },
+        {
+          "command": "1cConfigViewer.showHelp",
+          "title": "1C: Show Help"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "1cConfigViewer.refreshTree",
+          "when": "view == 1cConfigTreeView",
+          "group": "navigation"
+        },
+        {
+          "command": "1cConfigViewer.searchObjects",
+          "when": "view == 1cConfigTreeView",
+          "group": "navigation"
+        },
+        {
+          "command": "1cConfigViewer.clearSearch",
+          "when": "view == 1cConfigTreeView",
+          "group": "navigation"
+        },
+        {
+          "command": "1cConfigViewer.scanConfigurations",
+          "when": "view == 1cConfigTreeView",
+          "group": "navigation"
+        }
+      ],
+"view/item/context": [
+  {
+    "command": "1cConfigViewer.openObjectDetails",
+    "when": "view == 1cConfigTreeView && viewItem == 'object'",
+    "group": "inline"
+  }
+]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "test-compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "16.x",
+    "@types/vscode": "^1.60.0",
+    "@types/mocha": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "@vscode/test-electron": "^2.3.0",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.3.2"
+  }
+}
